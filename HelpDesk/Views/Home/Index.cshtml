@@ -1,0 +1,132 @@
+﻿@model HelpDesk;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" style="padding:16px">
+    <h1>Help Desk Contlog</h1>
+    <form asp-action="Create" enctype="multipart/form-data" method="post" style="width: 50vw;">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Sistema" />
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-user"></i>
+                    <label asp-for="Nome"></label>
+                </div>
+                <input asp-for="Nome" />
+            </div>
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-comment"></i>
+                    <label asp-for="Assunto"></label>
+                </div>
+                <input asp-for="Assunto" />
+            </div>
+            <span asp-validation-for="Assunto" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-document"></i>
+                    <label asp-for="Descricao"></label>
+                </div>
+                <textarea asp-for="Descricao"></textarea>
+            </div>
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-list"></i>
+                    <label asp-for="Categoria"></label>
+                </div>
+                <select asp-for="Categoria">
+                    <option value=1>COMPUTADORES</option>
+                    <option value=2>IMPRESSORA</option>
+                    <option value=3>INTERNET</option>
+                    <option value=4>SISTEMA ESCALASOFT</option>
+                    <option value=5>SOFTWARE DIVERSOS</option>
+                    <option value=6>TELEFONIA MOVEL/FIXA</option>
+                    <option value=7>PROBLEMAS COM ESCALASOFT </option>
+                </select>
+            </div>
+            <span asp-validation-for="Categoria" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-list"></i>
+                    <label asp-for="Departamento"></label>
+                </div>
+                <select asp-for="Departamento">
+                    <option value=2>TI CONTLOG</option>
+                </select>
+            </div>
+            <span asp-validation-for="Departamento" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-list"></i>
+                    <label asp-for="Modulo"></label>
+                </div>
+                <select asp-for="Modulo">
+                    <option value=24>Tecnologia</option>
+                </select>
+            </div>
+            <span asp-validation-for="Modulo" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-list"></i>
+                    <label asp-for="Severidade"></label>
+                </div>
+                <select asp-for="Severidade">
+                    <option value=1>Critica</option>
+                    <option value=2>Urgente</option>
+                    <option value=3>Alta</option>
+                    <option value=4>Normal</option>
+                    <option value=5>Baixa</option>
+                    <option value=6 selected>Minima</option>
+                </select>
+            </div>
+            <span asp-validation-for="Severidade" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-shield-exclamation"></i>
+                    <label asp-for="Tipo"></label>
+                </div>
+                <select asp-for="Tipo">
+                    <option value=1>AQUISICAO/COMPRA</option>
+                    <option value=2>DUVIDA DO USUARIO</option>
+                    <option value=6>MELHORIA NO SISTEMA</option>
+                    <option value=5>INSTALACAO E CONFIGURACAO</option>
+                    <option value=4>PROBLEMA NA UTILIZACAO</option>
+                    <option value=7>NECESSIDADE NO SISTEMA</option>
+                </select>
+            </div>
+            <span asp-validation-for="Tipo" class="text-danger"></span>
+        </div>
+        <div>
+            <div class=cntr-input>
+                <div>
+                    <i class="fi fi-rr-upload"></i>
+                    <label asp-for="Anexo.ArquivoUpload"></label>
+                </div>
+                <input asp-for="Anexo.ArquivoUpload">
+            </div>
+            <span asp-validation-for="Anexo" class="text-danger"></span>
+        </div>
+        <div>
+            <input style="margin-top:10px" type="submit" value="Enviar" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
