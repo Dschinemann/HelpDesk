@@ -23,6 +23,7 @@ namespace HelpDesk.Services
             var base64String = Convert.ToBase64String(ms.ToArray());
             hd.Anexo.Arquivo = base64String;
             hd.Anexo.NomeArquivo = hd.Anexo.ArquivoUpload.FileName;
+            hd.Descricao = hd.Assunto + "\n" + hd.Descricao + "\n"+ hd.Nome;
             string jsonString = JsonSerializer.Serialize(hd);
             try
             {
